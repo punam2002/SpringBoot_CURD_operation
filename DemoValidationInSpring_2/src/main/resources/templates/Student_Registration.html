@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Student Registration Form </title>
+		<style>
+			.tab{
+				border: 5px solid black;
+				margin-left:100px;
+				margin-right:100px;
+				margin-bottom:100px;
+				background-color: mediumpurple;
+				padding: 50px;
+				font-size: large;
+				font-family: 'Times New Roman';
+				
+			}
+		.d{
+			margin-left:100px;
+			margin-right:100px;
+			background-color:rebeccapurple;
+		}
+		</style>
+	</head>
+	<body><div align="center">
+		<div class="d" align="center"><h1>Register Here</h1></div>
+		<div align="center">
+			
+			<form action="#" th:action="@{/register}" method="post" th:object="${student}">
+				<table class="tab">
+					<tr>
+						<td>First Name: </td>
+						<td><input type="text" th:field="*{FirstName}"></td>
+						<td th:if="${#fields.hasErrors('FirstName')}" th:errors="*{FirstName}"></td>
+					</tr>
+					<tr>
+						<td>Last Name: </td>
+						<td><input type="text" th:field="*{LastName}"></td>
+						<td th:if="${#fields.hasErrors('LastName')}" th:errors="*{LastName}"></td>
+					</tr>
+					
+					<tr>
+						<td>Roll No: </td>
+						<td><input type="text" th:field="*{RollNo}" ></td>
+						<td th:if="${#fields.hasErrors('RollNo')}" th:errors="*{RollNo}"></td>
+					</tr>
+					
+					<tr>
+						<td>Email: </td>
+						<td><input type="text" th:field="*{Email}"></td>
+						<td th:if="${#fields.hasErrors('Email')}" th:errors="*{Email}"></td>
+					</tr>
+					
+					<tr>
+						<td>Contact No: </td>
+						<td><input type="text" th:field="*{Contact}"></td>
+						<td th:if="${#fields.hasErrors('Contact')}" th:errors="*{Contact}"></td>
+					</tr>
+					
+					<tr>
+						<td>City: </td>
+						<td><input type="text" th:field="*{City}"></td>
+						<td th:if="${#fields.hasErrors('City')}" th:errors="*{City}"></td>
+					</tr>
+					
+					<tr>
+						<td>DateOfBirth:</td>
+						<td><input type="date" th:field="*{DateOfBirth}"></td>
+						<td th:if="${#fields.hasErrors('DateOfBirth')}" th:errors="*{DateOfBirth}"></td>
+					</tr>
+					
+					<tr>
+						<td>Password: </td>
+						<td><input type="password" th:field="*{Password}"></td>
+						<td th:if="${#fields.hasErrors('Password')}" th:errors="*{Password}"></td>
+					</tr>
+					
+					<tr>
+						<td>Cource: </td>
+						<td>
+							<select th:field="*{Cource}" >
+							<option th:each="L:${courseList}" th:value="${L}" th:text="${L}"></option>
+								</select>
+								</td>
+						<td th:if="${#fields.hasErrors('Cource')}" th:errors="*{Cource}"></td>
+					</tr>
+					<tr>
+						<td><button type="submit" colspan="3" textalign="center">Submit</button></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		</div>
+	</body>
+</html>

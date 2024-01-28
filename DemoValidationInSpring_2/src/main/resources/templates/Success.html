@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Student Registration Form </title>
+		<style>
+			span{
+				font-size: large;
+				font-family: 'Times New Roman';
+			}
+			.sp{
+				color:black;
+				font-weight: bold;
+			}
+			.sp2{
+				padding-left: 10x;
+			}
+			.reg{
+				border: 10px groove gray;
+				margin: 100px;
+			    text-align: left;
+			    margin-left: 400px;
+			    margin-right:400px;
+			    margin-bottom:300px;
+			    padding-bottom: 30px;
+			    padding-left: 30px;
+			    background-color: hotpink;
+			}
+		</style>
+	</head>
+	<body th:object="${student}">
+		<div align="center" class="reg">
+			<h1>Student Details</h1>
+	<span class="sp">First Name: </span><span class="sp2" th:text="${student.FirstName}"></span><br/>
+	<span class="sp">Last Name:</span><span class="sp2" th:text="${student.LastName}"></span><br/>
+	<span class="sp">RollNo:</span><span class="sp2" th:text="${student.RollNo}"></span><br/>
+	<span class="sp">Email:</span><span class="sp2" th:text="${student.Email}"></span><br/>
+	<span class="sp">Contact No:</span><span class="sp2" th:text="${student.Contact}"></span><br/>
+	<span class="sp">Date Of Birth:</span><span class="sp2" th:text="${student.DateOfBirth}"></span><br/>
+		<span class="sp">Password:</span><span class="sp2" th:text="${student.Password}"></span><br/>
+	<span class="sp">Cource:</span><span class="sp2" th:text="${student.Cource}"></span><br/>
+		</div>
+	</body>
+</html>
