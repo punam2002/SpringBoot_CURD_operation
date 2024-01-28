@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head xmlns:th="http://www.thymeleaf.org">
+		<title>Home</title>
+		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	
+	</head>
+	<body>
+		<div class="container">
+			<h1>Student registration </h1>
+			<h2>Save Employee</h2>
+			<form action="#" th:action="@{/saveStudent}" th:object="${student}" method="post">
+				<input type="text" th:field="*{Student_Name}" placeholder="Enter Student name" class="from-control mb-4 col-4">
+				<input type="text" th:field="*{City}" placeholder="Enter City" class="from-control mb-4 col-4">
+				<input type="text" th:field="*{Email}" placeholder="Enter Email" class="from-control mb-4 col-4">
+				<input type="text" th:field="*{Contact}" placeholder="Enter Contact" class="from-control mb-4 col-4">
+				<input type="text" th:field="*{Course}" placeholder="Enter Course" class="from-control mb-4 col-4">
+				<button type="submit" class="btn btn-info col-2">Save Student</button>
+			</form>
+			<a th:href="@{/Home}">Back To Student List</a>
+		</div>
+	</body>
+</html>
